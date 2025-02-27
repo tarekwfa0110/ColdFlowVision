@@ -1,0 +1,40 @@
+# Build directories
+build/
+dist/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# IDE specific
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python
+venv/
+.env
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# OS specific
+desktop.ini
+
+# Virtual Environment
+.venv/ 

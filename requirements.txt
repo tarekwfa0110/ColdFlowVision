@@ -2,4 +2,5 @@ pywin32
 pynput
 psutil
 pillow
-pystray 
+pystray
+pyinstaller 

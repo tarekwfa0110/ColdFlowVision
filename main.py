@@ -7,6 +7,7 @@ import argparse
 import sys
 import traceback
 import logging
+import os
 from transparency_manager import CodeFlowVision
 
 def parse_arguments():
@@ -23,10 +24,12 @@ def main():
         
         # Setup logging level based on arguments
         log_level = logging.DEBUG if args.debug else logging.INFO
+        log_path = os.path.join(os.getenv('APPDATA'), 'CodeFlowVision', 'codeflow.log')
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
         logging.basicConfig(
             level=log_level,
             format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-            handlers=[logging.FileHandler("codeflow.log"), logging.StreamHandler()]
+            handlers=[logging.FileHandler(log_path), logging.StreamHandler()]
         )
         
         # Initialize the application
@@ -54,4 +57,4 @@ def main():
     return 0
 
 if __name__ == "__main__":
-    sys.exit(main()) 
+    sys.exit(main())                            
